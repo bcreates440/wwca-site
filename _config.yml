@@ -39,6 +39,8 @@ exclude:
   - COPY-A-PAGE.bat
   - images-original
   - STRIDE-BACKUP-do-not-edit
+  - oauth-worker
+  - check.rb
   - scratchpad
 
 # Keep the built output tidy and predictable.

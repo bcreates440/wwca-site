@@ -1,0 +1,12 @@
+# Cloudflare Worker that signs people in to the website editor.
+#
+# It is NOT the website. The website lives on GitHub Pages. This is a small
+# service that does the one thing GitHub Pages cannot: swap a GitHub login for
+# an access token.
+name = "wwca-auth"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+# The two secrets are NOT stored here. Set them once with:
+#   npx wrangler secret put GITHUB_CLIENT_ID
+#   npx wrangler secret put GITHUB_CLIENT_SECRET
