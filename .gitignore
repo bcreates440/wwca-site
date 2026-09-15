@@ -1,0 +1,18 @@
+# Full-size camera originals. Kept on disk as a backup, far too big for the
+# repo (21.6 MB). The web-sized copies the site actually uses are in images/.
+images-original/
+
+# The Stride Events copies - see that folder's README.
+STRIDE-BACKUP-do-not-edit/
+
+# Jekyll build output and local tooling
+_site/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
+.sass-cache/
+
+# OS noise
+Thumbs.db
+desktop.ini
+.DS_Store
