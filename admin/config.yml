@@ -15,9 +15,9 @@ backend:
   branch: main
   # --- OAUTH LOGIN -------------------------------------------------------
   # GitHub Pages cannot handle the login handshake by itself, so it is done
-  # by a small free service. Fill in its address here once it is set up.
-  # base_url: https://wwca-auth.YOUR-SUBDOMAIN.workers.dev
-  # auth_endpoint: auth
+  # by a small free service (see oauth-worker/).
+  base_url: https://wwca-auth.bcreates440.workers.dev
+  auth_endpoint: auth
   commit_messages:
     create: 'Add {{collection}} "{{slug}}"'
     update: 'Update {{collection}} "{{slug}}"'
