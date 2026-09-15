@@ -34,7 +34,9 @@ public_folder: "images"
 
 site_url: https://wyomingweaponscollectors.com
 display_url: https://wyomingweaponscollectors.com
-logo_url: https://wyomingweaponscollectors.com/images/logo.png
+# Relative, so the sign-in screen shows the seal even before the domain
+# is pointed at this site.
+logo_url: ../images/logo.png
 
 collections:
 
