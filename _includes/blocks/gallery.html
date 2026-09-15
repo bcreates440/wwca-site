@@ -1,0 +1,25 @@
+{%- comment -%}
+  A grid of photographs. Every photo needs alt text describing what is in it -
+  that is what a blind visitor hears and what Google reads.
+{%- endcomment -%}
+{%- assign b = include.b -%}
+  <section class="band-{{ b.band | default: 'paper' }}">
+    <div class="wrap">
+      {%- if b.eyebrow %}
+      <p class="eyebrow">{{ b.eyebrow }}</p>
+      {%- endif %}
+      <h2>{{ b.heading }}</h2>
+      <div class="gallery">
+        {%- for photo in b.photos %}
+        <figure>
+          <img src="{{ photo.image }}" width="{{ photo.width }}" height="{{ photo.height }}" loading="lazy"
+               alt="{{ photo.alt }}">
+          <figcaption>{{ photo.caption }}</figcaption>
+        </figure>
+        {%- endfor %}
+      </div>
+      {%- if b.note %}
+      <p class="btn-note" style="margin-top:1.4rem">{% include md.html text=b.note inline=true %}</p>
+      {%- endif %}
+    </div>
+  </section>

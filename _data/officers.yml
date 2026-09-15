@@ -1,0 +1,49 @@
+# ===========================================================================
+#  THE PEOPLE
+#
+#  Used on the About page and the Contact page, so a name or a phone number
+#  only ever has to be changed here once.
+#
+#  After an election: update this file, and check the names in
+#  _includes/jsonld/about.html too - that is the copy Google reads.
+# ===========================================================================
+
+officers:
+  - name: "Jeff Lane"
+    role: "President"
+    town: "Casper, Wyoming"
+    phone: "(307) 267-9800"
+    phone_dial: "+13072679800"
+    note: "Ran unopposed and was re-elected in 2026."
+
+  - name: "Rodney Walden"
+    role: "Vice President &amp; Show Chairman"
+    town: "Upton, Wyoming"
+    phone: "(307) 746-5463"
+    phone_dial: "+13077465463"
+    note: >-
+      Elected Vice President in a contested three-way race in 2026,
+      continuing as Show Chairman.
+
+  - name: "Maralyne Middour"
+    role: "Secretary / Treasurer"
+    town: "Lander, Wyoming"
+    phone: "(307) 349-4914"
+    phone_dial: "+13073494914"
+    email: "WWCA@wyoming.com"
+    note: "Ran unopposed and was re-elected in 2026."
+
+# Directors have a short line of their own rather than a phone number.
+board:
+  - name: "Teresa Brown"
+    role: "Director"
+    detail: "Elected to the board in 2026."
+  - name: "Garth Huff"
+    role: "Director"
+    detail: "Green River, Wyoming. Continuing director."
+  - name: "Rex Fritzler"
+    role: "Director &amp; Board Chaplain"
+    detail: "Glendo, Wyoming. Leads the Sunday Cowboy Church service."
+  - name: "Jeff Smith"
+    role: "Director"
+    detail: "Riverton, Wyoming. Continuing his ongoing term."

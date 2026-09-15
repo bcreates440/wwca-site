@@ -1,0 +1,28 @@
+{%- comment -%} A grid of cards, each with a small heading and a paragraph. {%- endcomment -%}
+{%- assign b = include.b -%}
+  <section class="band-{{ b.band | default: 'cream' }}">
+    <div class="wrap">
+      {%- if b.center %}
+      <div class="center" style="margin-bottom:2rem">
+        {%- if b.eyebrow %}
+        <p class="eyebrow">{{ b.eyebrow }}</p>
+        {%- endif %}
+        <h2>{{ b.heading }}</h2>
+      </div>
+      {%- else %}
+      {%- if b.eyebrow %}
+      <p class="eyebrow">{{ b.eyebrow }}</p>
+      {%- endif %}
+      <h2>{{ b.heading }}</h2>
+      {%- endif %}
+      <div class="grid {{ b.columns | default: 'g3' }}">
+        {%- for card in b.cards %}
+        <article class="card{% if b.accent != false %} card-accent{% endif %}">
+          <h3>{{ card.title }}</h3>
+          {% include md.html text=card.body %}
+        </article>
+        {%- endfor %}
+      </div>
+      {%- include blocks/buttons.html buttons=b.buttons style="margin-top:1.6rem" %}
+    </div>
+  </section>

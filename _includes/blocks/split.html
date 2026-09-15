@@ -1,0 +1,26 @@
+{%- comment -%} Text on one side, a photograph on the other. {%- endcomment -%}
+{%- assign b = include.b -%}
+  <section class="band-{{ b.band | default: 'navy' }}">
+    <div class="wrap split">
+      <div>
+        {%- if b.eyebrow %}
+        <p class="eyebrow">{{ b.eyebrow }}</p>
+        {%- endif %}
+        <h2>{{ b.heading }}</h2>
+        {%- if b.lede %}
+        <p class="lede">{% include md.html text=b.lede inline=true %}</p>
+        {%- endif %}
+        {% include md.html text=b.body %}
+        {%- if b.facts %}
+        <ul class="facts">
+          {%- for f in b.facts %}
+          <li><b>{{ f.term }}</b><span>{% include md.html text=f.detail inline=true %}</span></li>
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+        {%- include blocks/buttons.html buttons=b.buttons %}
+      </div>
+      <img src="{{ b.image }}" width="{{ b.image_width }}" height="{{ b.image_height }}" loading="lazy"
+           alt="{{ b.image_alt }}">
+    </div>
+  </section>

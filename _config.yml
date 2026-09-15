@@ -44,3 +44,10 @@ exclude:
 # Keep the built output tidy and predictable.
 sass:
   style: compressed
+
+# Markdown settings.
+#   smart_quotes off: an apostrophe stays a plain ' rather than becoming a
+#   curly one. This keeps the text byte-identical to the hand-written pages.
+#   Delete these two lines if you would rather have typographic quotes.
+kramdown:
+  smart_quotes: ["apos", "apos", "quot", "quot"]

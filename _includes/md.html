@@ -1,0 +1,32 @@
+{%- comment -%}
+  Turns a piece of writing into HTML, and fills in the shortcuts below so that
+  facts which appear in ordinary sentences still come from _data/site.yml and
+  only ever have to be changed in one place.
+
+  Type this            to get this
+    [[phone]]            (307) 349-4914
+    [[email]]            WWCA@wyoming.com
+    [[org]]              Wyoming Weapons Collectors Association
+    [[address]]          P.O. Box 204, Lander, WY 82520-0204
+    [[venue]]            Fremont County Fairgrounds
+    [[dates]]            May 29-30, 2027
+    [[cap]]              245
+    [[ordinal]]          38th
+    [[year]]             2027
+
+  Pass inline=true for a fragment that must not be wrapped in its own
+  paragraph, such as a button note or the lede in a closing banner.
+{%- endcomment -%}
+{%- assign s = site.data.site -%}
+{%- assign t = include.text -%}
+{%- assign t = t | replace: '[[phone]]',   s.phone -%}
+{%- assign t = t | replace: '[[email]]',   s.email -%}
+{%- assign t = t | replace: '[[org]]',     s.org_name -%}
+{%- assign addr = s.po_box | append: ', ' | append: s.mail_city | append: ', ' | append: s.mail_state | append: ' ' | append: s.mail_zip -%}
+{%- assign t = t | replace: '[[address]]', addr -%}
+{%- assign t = t | replace: '[[venue]]',   s.venue_name -%}
+{%- assign t = t | replace: '[[dates]]',   s.show_dates -%}
+{%- assign t = t | replace: '[[cap]]',     s.table_cap -%}
+{%- assign t = t | replace: '[[ordinal]]', s.show_ordinal -%}
+{%- assign t = t | replace: '[[year]]',    s.show_year -%}
+{%- if include.inline %}{{ t }}{% else %}{{ t | markdownify }}{% endif -%}

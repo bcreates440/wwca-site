@@ -2,174 +2,139 @@
 slug: "about"
 permalink: "/about.html"
 title: "About the WWCA | Wyoming Weapons Collectors Association"
-description: "The Wyoming Weapons Collectors Association is a 501(c)(3) non-profit of firearms collectors founded on youth education, firearms safety and Wyoming's collecting traditions. Meet the officers and board of directors."
-og_title: "About the WWCA | Wyoming Weapons Collectors Association"
-og_description: "A 501(c)(3) non-profit of Wyoming firearms collectors, built on youth education and safety. Meet the officers and board."
-tw_title: "About the WWCA"
+description: "The Wyoming Weapons Collectors Association is a 501(c)(3) non-profit of Wyoming firearms collectors. Meet the officers and board, read the mission, and see the association's non-profit standing."
+og_title: "About the Wyoming Weapons Collectors Association"
+og_description: "A family-oriented 501(c)(3) non-profit dedicated to firearms history, youth shooting education and Wyoming's collecting traditions."
+tw_title: "About the Wyoming Weapons Collectors Association"
 tw_description: "A 501(c)(3) non-profit of Wyoming firearms collectors."
 jsonld: true
+
+blocks:
+
+  - type: pagehead
+    eyebrow: "Since 1990 &middot; A 501(c)(3) non-profit"
+    heading: "About the Association"
+    intro: >
+      A volunteer-run association of Wyoming firearms collectors, built around one
+      weekend a year and one idea: teach the next generation to do this safely.
+
+  - type: split
+    band: paper
+    eyebrow: "What we are for"
+    heading: "A family organization, first"
+    lede: >-
+      The WWCA is, above all, a family-oriented organization. We believe
+      that hunting and shooting sports offer a unique opportunity to instill
+      discipline, ethics, and a profound respect for safety in our youth.
+    body: >
+      That is not decoration on a letterhead. It is the charitable purpose the
+      association is registered under, and it is what the money does: educate youth
+      in the Second Amendment and firearms safety, foster ethics, and reward
+      marksmanship proficiency.
+
+
+      For years the WWCA pursued that by writing checks to outside groups &mdash;
+      which bought us a thank-you letter and not much else. Putting an NWTF youth
+      shooting range on our own show floor was a step outside the comfort zone, and
+      it changed everything. Ninety-eight kids shot it in 2026, and the Wyoming NWTF
+      doubled its statewide JAKES youth membership off the back of one weekend.
+    buttons:
+      - label: "The youth program"
+        url: "youth.html"
+        style: navy
+      - label: "Join us"
+        url: "membership.html"
+        style: outline
+    image: "images/wwca-06.jpg"
+    image_width: 1000
+    image_height: 872
+    image_alt: "WWCA President Jeff Lane with a longtime member at the Memorial Weekend Gun Show."
+
+  - type: prose
+    band: cream
+    eyebrow: "Our one gathering of the year"
+    heading: "The Memorial Weekend Gun Show"
+    body: >
+      The association's annual show has run on Memorial Day weekend at the Fremont
+      County Fairgrounds in Riverton for nearly four decades. May [[year]] is the
+      <strong>[[ordinal]] Annual</strong>.
+
+
+      There is an important distinction between our show and a regular circuit gun
+      show: <strong>ours is a fundraiser.</strong> It is the one time all year the whole
+      association is in the same place, so we work to make it feel like an occasion
+      &mdash; the Friday supper, the Saturday catered dinner, Sunday Cowboy Church
+      &mdash; and we deliberately keep table prices reasonable and favour our members,
+      because dues-paying members invested in this organization are what make the show
+      work at all.
+
+
+      Everything the show clears goes back into the association's charitable mission.
+    buttons:
+      - label: "2027 show details"
+        url: "show.html"
+        style: primary
+      - label: "See the gallery"
+        url: "gallery.html"
+        style: outline
+
+  - type: people
+    band: paper
+    center: true
+    columns: 3
+    eyebrow: "Elected by the membership"
+    heading: "Officers"
+    source: officers
+
+  - type: people
+    band: navy
+    center: true
+    eyebrow: "2026 election results"
+    heading: "Board of Directors"
+    source: board
+    callout_style: "alert"
+    callout: >
+      <strong>With thanks.</strong> Elijah Aldrich chose not to seek re-election in
+      2026 after a move to Montana, and Gus Schmidt completed his term. The
+      association is grateful to both for their service.
+
+  - type: prose
+    band: paper
+    eyebrow: "Governance"
+    heading: "Non-profit standing"
+    facts:
+      - term: "Status"
+        detail: "501(c)(3) non-profit organization in good standing"
+      - term: "EIN"
+        detail: "33-3403077"
+      - term: "IRS letter"
+        detail: "Determination letter issued 23 March 2025"
+      - term: "Governance"
+        detail: "Officers and directors elected annually by the membership"
+      - term: "Mailing address"
+        detail: "[[address]]"
+      - term: "Newsletter"
+        detail: >-
+          <em>The Rifle Shot</em> &mdash;
+          <a href="https://issuu.com/wyomingweaponscollectors" target="_blank" rel="noopener">read
+          past issues</a>
+    after_style: "margin-top:1.6rem"
+    body_after: >-
+      Every officer, director and show volunteer is unpaid.
+      The association has no staff.
+
+  - type: cta
+    band: red
+    heading: "Add your name to it"
+    lede: >-
+      Adult membership is $50 a year, youth
+      membership $8. Members vote, get member table rates, and keep the youth range
+      free for everyone who walks up to it.
+    buttons:
+      - label: "Join the WWCA"
+        link: join_url
+        style: navy
+      - label: "Contact the board"
+        url: "contact.html"
+        style: ghost
 ---
-<!-- =========================================================================
-     EDIT: ABOUT FACTS ON THIS PAGE
-       Officers ....... "Officers" + "Board of Directors" sections. These reflect the
-                        2026 election result. Update after each annual election, and
-                        update the JSON-LD "employee" list in the <head> to match.
-       Mission ........ "What we are for" - the verbatim mission statement
-       501(c)(3) ...... EIN 33-3403077, determination letter dated 23 March 2025
-       Mailing addr ... P.O. Box 204, Lander, WY 82520-0204
-     ========================================================================= -->
-
-
-  <div class="pagehead">
-    <div class="wrap">
-      <p class="eyebrow">Since 1990 &middot; A 501(c)(3) non-profit</p>
-      <h1>About the Association</h1>
-      <p>A volunteer-run association of Wyoming firearms collectors, built around one
-         weekend a year and one idea: teach the next generation to do this safely.</p>
-    </div>
-  </div>
-
-  <!-- ---------- MISSION ---------- -->
-  <section class="band-paper">
-    <div class="wrap split">
-      <div>
-        <p class="eyebrow">What we are for</p>
-        <h2>A family organization, first</h2>
-        <p class="lede">The WWCA is, above all, a family-oriented organization. We believe
-           that hunting and shooting sports offer a unique opportunity to instill
-           discipline, ethics, and a profound respect for safety in our youth.</p>
-        <p>That is not decoration on a letterhead. It is the charitable purpose the
-           association is registered under, and it is what the money does: educate youth
-           in the Second Amendment and firearms safety, foster ethics, and reward
-           marksmanship proficiency.</p>
-        <p>For years the WWCA pursued that by writing checks to outside groups &mdash;
-           which bought us a thank-you letter and not much else. Putting an NWTF youth
-           shooting range on our own show floor was a step outside the comfort zone, and
-           it changed everything. Ninety-eight kids shot it in 2026, and the Wyoming NWTF
-           doubled its statewide JAKES youth membership off the back of one weekend.</p>
-        <div class="btn-row">
-          <a class="btn btn-navy" href="youth.html">The youth program</a>
-          <a class="btn btn-outline" href="membership.html">Join us</a>
-        </div>
-      </div>
-      <img src="images/wwca-06.jpg" width="1000" height="872" loading="lazy"
-           alt="WWCA President Jeff Lane with a longtime member at the Memorial Weekend Gun Show.">
-    </div>
-  </section>
-
-  <!-- ---------- THE SHOW ---------- -->
-  <section class="band-cream">
-    <div class="wrap narrow">
-      <p class="eyebrow">Our one gathering of the year</p>
-      <h2>The Memorial Weekend Gun Show</h2>
-      <p>The association's annual show has run on Memorial Day weekend at the Fremont
-         County Fairgrounds in Riverton for nearly four decades. May 2027 is the
-         <strong>38th Annual</strong>.</p>
-      <p>There is an important distinction between our show and a regular circuit gun
-         show: <strong>ours is a fundraiser.</strong> It is the one time all year the whole
-         association is in the same place, so we work to make it feel like an occasion
-         &mdash; the Friday supper, the Saturday catered dinner, Sunday Cowboy Church
-         &mdash; and we deliberately keep table prices reasonable and favour our members,
-         because dues-paying members invested in this organization are what make the show
-         work at all.</p>
-      <p>Everything the show clears goes back into the association's charitable mission.</p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="show.html">2027 show details</a>
-        <a class="btn btn-outline" href="gallery.html">See the gallery</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ---------- OFFICERS ---------- -->
-  <section class="band-paper">
-    <div class="wrap">
-      <div class="center" style="margin-bottom:2rem">
-        <p class="eyebrow">Elected by the membership</p>
-        <h2>Officers</h2>
-      </div>
-      <ul class="people" style="grid-template-columns:repeat(3,1fr)">
-        <li class="person">
-          <b>Jeff Lane</b>
-          <span class="role">President</span>
-          <p>Casper, Wyoming<br><a href="tel:+13072679800">(307) 267-9800</a></p>
-          <p class="btn-note">Ran unopposed and was re-elected in 2026.</p>
-        </li>
-        <li class="person">
-          <b>Rodney Walden</b>
-          <span class="role">Vice President &amp; Show Chairman</span>
-          <p>Upton, Wyoming<br><a href="tel:+13077465463">(307) 746-5463</a></p>
-          <p class="btn-note">Elected Vice President in a contested three-way race in 2026,
-             continuing as Show Chairman.</p>
-        </li>
-        <li class="person">
-          <b>Maralyne Middour</b>
-          <span class="role">Secretary / Treasurer</span>
-          <p>Lander, Wyoming<br><a href="tel:+13073494914">(307) 349-4914</a><br>
-             <a href="mailto:WWCA@wyoming.com">WWCA@wyoming.com</a></p>
-          <p class="btn-note">Ran unopposed and was re-elected in 2026.</p>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ---------- BOARD ---------- -->
-  <section class="band-navy">
-    <div class="wrap">
-      <div class="center" style="margin-bottom:2rem">
-        <p class="eyebrow">2026 election results</p>
-        <h2>Board of Directors</h2>
-      </div>
-      <ul class="people">
-        <li class="person"><b>Teresa Brown</b><span class="role">Director</span>
-          <p>Elected to the board in 2026.</p></li>
-        <li class="person"><b>Garth Huff</b><span class="role">Director</span>
-          <p>Green River, Wyoming. Continuing director.</p></li>
-        <li class="person"><b>Rex Fritzler</b><span class="role">Director &amp; Board Chaplain</span>
-          <p>Glendo, Wyoming. Leads the Sunday Cowboy Church service.</p></li>
-        <li class="person"><b>Jeff Smith</b><span class="role">Director</span>
-          <p>Riverton, Wyoming. Continuing his ongoing term.</p></li>
-      </ul>
-      <div class="note alert" style="margin-top:2rem">
-        <p><strong>With thanks.</strong> Elijah Aldrich chose not to seek re-election in
-           2026 after a move to Montana, and Gus Schmidt completed his term. The
-           association is grateful to both for their service.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ---------- NON PROFIT ---------- -->
-  <section class="band-paper">
-    <div class="wrap narrow">
-      <p class="eyebrow">Governance</p>
-      <h2>Non-profit standing</h2>
-      <ul class="facts">
-        <li><b>Status</b><span>501(c)(3) non-profit organization in good standing</span></li>
-        <li><b>EIN</b><span>33-3403077</span></li>
-        <li><b>IRS letter</b><span>Determination letter issued 23 March 2025</span></li>
-        <li><b>Governance</b><span>Officers and directors elected annually by the
-            membership</span></li>
-        <li><b>Mailing address</b><span>P.O. Box 204, Lander, WY 82520-0204</span></li>
-        <li><b>Newsletter</b><span><em>The Rifle Shot</em> &mdash;
-            <a href="https://issuu.com/wyomingweaponscollectors" target="_blank" rel="noopener">read
-            past issues</a></span></li>
-      </ul>
-      <p style="margin-top:1.6rem">Every officer, director and show volunteer is unpaid.
-         The association has no staff.</p>
-    </div>
-  </section>
-
-  <section class="band-red">
-    <div class="wrap narrow center">
-      <h2>Add your name to it</h2>
-      <p class="lede" style="color:#FFE2E4">Adult membership is $50 a year, youth
-         membership $8. Members vote, get member table rates, and keep the youth range
-         free for everyone who walks up to it.</p>
-      <div class="btn-row center">
-        <a class="btn btn-navy"
-           href="https://www.strideevents.com/club-memberships/wyoming-weapons-collectors-association/register"
-           target="_blank" rel="noopener">Join the WWCA</a>
-        <a class="btn btn-ghost" href="contact.html">Contact the board</a>
-      </div>
-    </div>
-  </section>
-
