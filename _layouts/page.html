@@ -27,6 +27,7 @@
 {%- when 'gallery' %}{% include blocks/gallery.html b=b %}
 {%- when 'people' %}{% include blocks/people.html b=b %}
 {%- when 'cta' %}{% include blocks/cta.html b=b %}
+{%- when 'stats' %}{% include blocks/stats.html b=b %}
 {%- when 'raw' %}{{ b.html }}
 {%- else %}<!-- unknown block type "{{ b.type }}" - check the spelling against _includes/blocks/ -->
 {%- endcase %}

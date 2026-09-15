@@ -5,10 +5,19 @@
 {%- assign b = include.b -%}
   <section class="band-{{ b.band | default: 'paper' }}">
     <div class="wrap">
+      {%- if b.center %}
+      <div class="center" style="margin-bottom:{{ b.heading_gap | default: '2rem' }}">
+        {%- if b.eyebrow %}
+        <p class="eyebrow">{{ b.eyebrow }}</p>
+        {%- endif %}
+        <h2>{{ b.heading }}</h2>
+      </div>
+      {%- else %}
       {%- if b.eyebrow %}
       <p class="eyebrow">{{ b.eyebrow }}</p>
       {%- endif %}
       <h2>{{ b.heading }}</h2>
+      {%- endif %}
       <div class="gallery">
         {%- for photo in b.photos %}
         <figure>
@@ -18,6 +27,7 @@
         </figure>
         {%- endfor %}
       </div>
+      {%- include blocks/buttons.html buttons=b.buttons center=true style=b.buttons_style %}
       {%- if b.note %}
       <p class="btn-note" style="margin-top:1.4rem">{% include md.html text=b.note inline=true %}</p>
       {%- endif %}

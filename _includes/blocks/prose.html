@@ -22,6 +22,16 @@
         {%- endfor %}
       </ul>
       {%- endif %}
+      {%- if b.cards %}
+      <div class="grid {{ b.cards_columns | default: 'g2' }}"{% if b.cards_style %} style="{{ b.cards_style }}"{% endif %}>
+        {%- for card in b.cards %}
+        <article class="card{% if b.cards_accent %} card-accent{% endif %}">
+          <h3>{{ card.title }}</h3>
+          {% include md.html text=card.body %}
+        </article>
+        {%- endfor %}
+      </div>
+      {%- endif %}
       {%- if b.callout %}
       <div class="note{% if b.callout_style %} {{ b.callout_style }}{% endif %}">
         {% include md.html text=b.callout %}
