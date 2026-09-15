@@ -1,0 +1,16 @@
+{%- assign s = site.data.site -%}
+<!-- Days-until-show counter. The date comes from show_start in _data/site.yml;
+     there is nothing to edit in here. -->
+<script>
+(function(){
+  var SHOW_Y={{ s.show_start | date: '%Y' }}, SHOW_M={{ s.show_start | date: '%m' | plus: 0 | minus: 1 }}, SHOW_D={{ s.show_start | date: '%d' | plus: 0 }}, RUNS_DAYS={{ s.show_days }};
+  var el=document.getElementById("countdown");
+  if(!el)return;
+  var show=new Date(SHOW_Y,SHOW_M,SHOW_D);
+  var today=new Date(); today.setHours(0,0,0,0);
+  var days=Math.round((show-today)/86400000);
+  el.textContent = days>1 ? days+" days until the doors open"
+                 : days===1 ? "The show opens tomorrow"
+                 : (days<=0 && days>-RUNS_DAYS) ? "The show is on now" : "";
+})();
+</script>

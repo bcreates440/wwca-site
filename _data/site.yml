@@ -1,0 +1,60 @@
+# ===========================================================================
+#  THE FACTS THAT APPEAR EVERYWHERE
+#
+#  Change something here and it changes on every page at once. Before this
+#  file existed the phone number was written out 20 times across 9 files and
+#  the Stride Events links 61 times.
+#
+#  Anything in here can also be edited in the website editor at /admin/
+#  under "Site-wide details".
+# ===========================================================================
+
+org_name:     "Wyoming Weapons Collectors Association"
+org_short:    "WWCA"
+org_blurb:    "A 501(c)(3) non-profit dedicated to firearms history, youth shooting
+               education, and the collecting traditions of Wyoming."
+ein:          "33-3403077"
+
+# --- how people reach the association -------------------------------------
+po_box:       "P.O. Box 204"
+mail_city:    "Lander"
+mail_state:   "WY"
+mail_zip:     "82520-0204"
+email:        "WWCA@wyoming.com"
+
+# Written out for people, and again in the format a phone can dial. BOTH
+# must be changed together.
+phone:        "(307) 349-4914"
+phone_dial:   "+13073494914"
+
+# --- where the show happens -----------------------------------------------
+venue_name:   "Fremont County Fairgrounds"
+venue_street: "1010 Fairgrounds Drive"
+venue_city:   "Riverton"
+venue_state:  "WY"
+venue_zip:    "82501"
+
+# --- the show itself ------------------------------------------------------
+show_ordinal: "38th"
+show_year:    "2027"
+show_dates:   "May 29-30, 2027"
+
+# The first day of the show, as a real date. The "days until the doors open"
+# counter on the home page is worked out from this, so it only needs changing
+# in this one place.
+show_start:   2027-05-29
+show_days:    2
+table_cap:    "245"
+
+# --- the three Stride Events links ----------------------------------------
+# These change every year. They are the only place the year appears in a URL.
+tickets_url:  "https://www.strideevents.com/events/38th-annual-memorial-weekend-gun-show/2027/tickets"
+vendors_url:  "https://www.strideevents.com/events/38th-annual-memorial-weekend-gun-show-vendors/2027/tickets"
+join_url:     "https://www.strideevents.com/club-memberships/wyoming-weapons-collectors-association/register"
+
+# --- elsewhere on the web -------------------------------------------------
+facebook:     "https://www.facebook.com/p/Wyoming-Weapons-Collectors-Association-WWCA-61576531526837/"
+issuu:        "https://issuu.com/wyomingweaponscollectors"
+
+# --- the picture used when a link is shared on Facebook etc. --------------
+share_image:  "images/poster-2027.jpg"

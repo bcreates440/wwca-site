@@ -1,0 +1,46 @@
+# ===========================================================================
+#  WWCA website - Jekyll settings
+#
+#  GitHub Pages reads this file and builds the site automatically every time
+#  you save a change. There is nothing to run yourself.
+# ===========================================================================
+
+# The address the finished website lives at. This is used to build the
+# canonical and social-sharing tags that search engines read.
+#
+# IMPORTANT: leave this pointing at the real domain even while the site is
+# still being previewed at bcreates440.github.io. It tells Google that
+# wyomingweaponscollectors.com is the real address, which is what stops the
+# preview copy competing with the real site in search results.
+url: "https://wyomingweaponscollectors.com"
+baseurl: ""
+
+title: "Wyoming Weapons Collectors Association"
+description: "A 501(c)(3) non-profit association of Wyoming firearms collectors."
+
+# Every page lives in _content/. They come out as /index.html, /show.html and
+# so on, because each file states its own permalink.
+collections:
+  content:
+    output: true
+
+defaults:
+  - scope: { path: "", type: "content" }
+    values: { layout: "page" }
+
+# Folders that are working files, not part of the finished website.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - check.sh
+  - countdown_test.js
+  - README-EDITING.md
+  - COPY-A-PAGE.bat
+  - images-original
+  - STRIDE-BACKUP-do-not-edit
+  - scratchpad
+
+# Keep the built output tidy and predictable.
+sass:
+  style: compressed

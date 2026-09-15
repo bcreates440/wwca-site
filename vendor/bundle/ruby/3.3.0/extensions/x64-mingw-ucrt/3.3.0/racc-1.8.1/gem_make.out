@@ -1,0 +1,23 @@
+current directory: C:/Users/blake/OneDrive/Pictures/Event Assets/WY Gun Collectors Assoc/wwca-site/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+C:/Ruby33-x64/bin/ruby.exe extconf.rb
+creating Makefile
+
+current directory: C:/Users/blake/OneDrive/Pictures/Event Assets/WY Gun Collectors Assoc/wwca-site/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260915-23628-4tgw9m sitelibdir\=./.gem.20260915-23628-4tgw9m clean
+make: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+
+current directory: C:/Users/blake/OneDrive/Pictures/Event Assets/WY Gun Collectors Assoc/wwca-site/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260915-23628-4tgw9m sitelibdir\=./.gem.20260915-23628-4tgw9m
+make: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+generating cparse-x64-mingw-ucrt.def
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: C:/Users/blake/OneDrive/Pictures/Event Assets/WY Gun Collectors Assoc/wwca-site/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260915-23628-4tgw9m sitelibdir\=./.gem.20260915-23628-4tgw9m install
+make: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+/usr/bin/install -c -m 0755 cparse.so ./.gem.20260915-23628-4tgw9m/racc
+
+current directory: C:/Users/blake/OneDrive/Pictures/Event Assets/WY Gun Collectors Assoc/wwca-site/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260915-23628-4tgw9m sitelibdir\=./.gem.20260915-23628-4tgw9m clean
+make: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.

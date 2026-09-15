@@ -1,0 +1,55 @@
+{%- comment -%}
+  The footer. Written once, used by every page.
+  The name, address and phone here must stay identical across the whole site -
+  search engines use that consistency to rank local results. Because this is
+  now one file, they cannot drift apart.
+{%- endcomment -%}
+{%- assign s = site.data.site -%}
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <img src="images/logo.png" alt="{{ s.org_name }} seal"
+             width="74" height="74" loading="lazy">
+        <p><strong style="color:#fff">{{ s.org_name }}</strong><br>
+        {{ s.org_blurb }}</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+{%- for item in site.data.nav %}
+          <li><a href="{{ item.url }}">{{ item.footer | default: item.label }}</a></li>
+{%- endfor %}
+        </ul>
+      </div>
+      <div>
+        <h3>Take Part</h3>
+        <ul>
+          <li><a href="{{ s.tickets_url }}" target="_blank" rel="noopener">Show Tickets</a></li>
+          <li><a href="{{ s.vendors_url }}" target="_blank" rel="noopener">Reserve a Table</a></li>
+          <li><a href="{{ s.join_url }}" target="_blank" rel="noopener">Join the WWCA</a></li>
+          <li><a href="{{ s.facebook }}" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="{{ s.issuu }}" target="_blank" rel="noopener">Newsletter Archive</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>
+          {{ s.org_name }}<br>
+          {{ s.po_box }}<br>
+          {{ s.mail_city }}, {{ s.mail_state }} {{ s.mail_zip }}<br>
+          <a href="mailto:{{ s.email }}">{{ s.email }}</a><br>
+          <a href="tel:{{ s.phone_dial }}">{{ s.phone }}</a>
+        </p>
+        <p><strong style="color:#fff">Show location</strong><br>
+          {{ s.venue_name }}<br>
+          {{ s.venue_street }}<br>
+          {{ s.venue_city }}, {{ s.venue_state }} {{ s.venue_zip }}</p>
+      </div>
+    </div>
+    <div class="legal">
+      <span>&copy; {{ site.time | date: '%Y' }} {{ s.org_name }}. All rights reserved.</span>
+      <span>501(c)(3) non-profit &middot; EIN {{ s.ein }}</span>
+    </div>
+  </div>
+</footer>

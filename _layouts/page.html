@@ -1,0 +1,21 @@
+{%- comment -%}
+  The shape every page shares: head, the logo bar and navigation, the page's
+  own content, then the footer. Change it here and every page changes.
+{%- endcomment -%}
+<!doctype html>
+<html lang="en">
+<head>
+{%- include head.html %}
+</head>
+<body>
+{% include header.html %}
+<main id="main">
+{{ content }}
+</main>
+
+{% include footer.html %}
+{%- if page.countdown %}
+{% include countdown.html %}
+{%- endif %}
+</body>
+</html>
