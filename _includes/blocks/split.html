@@ -14,7 +14,7 @@
       <div class="split">
       {%- endif %}
       {%- if b.image_first %}
-      <img src="{{ b.image }}" width="{{ b.image_width }}" height="{{ b.image_height }}"{% if b.image_priority %} fetchpriority="high"{% else %} loading="lazy"{% endif %}
+      <img src="{{ b.image }}" {% if b.image_width %}width="{{ b.image_width }}" height="{{ b.image_height }}" {% endif %}{% if b.image_priority %}fetchpriority="high"{% else %} loading="lazy"{% endif %}
                  alt="{{ b.image_alt }}">
       {%- endif %}
       <div>
@@ -46,7 +46,7 @@
         {%- include blocks/buttons.html buttons=b.buttons %}
       </div>
       {%- unless b.image_first %}
-      <img src="{{ b.image }}" width="{{ b.image_width }}" height="{{ b.image_height }}"{% if b.image_priority %} fetchpriority="high"{% else %} loading="lazy"{% endif %}
+      <img src="{{ b.image }}" {% if b.image_width %}width="{{ b.image_width }}" height="{{ b.image_height }}" {% endif %}{% if b.image_priority %}fetchpriority="high"{% else %} loading="lazy"{% endif %}
            alt="{{ b.image_alt }}">
       {%- endunless %}
       {%- if b.nested %}

@@ -19,7 +19,7 @@
     <label class="nav-label" for="navtoggle" aria-hidden="true">&#9776;</label>
     <nav class="nav" aria-label="Main">
       <ul>
-{%- for item in site.data.nav %}
+{%- for item in site.data.nav.items %}
         <li><a href="{{ item.url }}"{% if item.slug == page.slug %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
 {%- endfor %}
         <li><a class="btn btn-primary"

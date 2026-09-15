@@ -13,7 +13,7 @@
       </div>
       <div class="strip">
         {%- for photo in b.photos %}
-        <img src="{{ photo.image }}" width="{{ photo.width }}" height="{{ photo.height }}" loading="lazy"
+        <img src="{{ photo.image }}" {% if photo.width %}width="{{ photo.width }}" height="{{ photo.height }}" {% endif %}loading="lazy"
              alt="{{ photo.alt }}">
         {%- endfor %}
       </div>

@@ -13,6 +13,9 @@
     [[cap]]              245
     [[ordinal]]          38th
     [[year]]             2027
+    [[tickets]]          the Stride Events ticket link
+    [[vendors]]          the Stride Events vendor link
+    [[join]]             the Stride Events membership link
 
   Pass inline=true for a fragment that must not be wrapped in its own
   paragraph, such as a button note or the lede in a closing banner.
@@ -29,4 +32,7 @@
 {%- assign t = t | replace: '[[cap]]',     s.table_cap -%}
 {%- assign t = t | replace: '[[ordinal]]', s.show_ordinal -%}
 {%- assign t = t | replace: '[[year]]',    s.show_year -%}
+{%- assign t = t | replace: '[[tickets]]', s.tickets_url -%}
+{%- assign t = t | replace: '[[vendors]]', s.vendors_url -%}
+{%- assign t = t | replace: '[[join]]',    s.join_url -%}
 {%- if include.inline %}{{ t }}{% else %}{{ t | markdownify }}{% endif -%}

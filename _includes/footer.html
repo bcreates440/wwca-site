@@ -17,7 +17,7 @@
       <div>
         <h3>Explore</h3>
         <ul>
-{%- for item in site.data.nav %}
+{%- for item in site.data.nav.items %}
           <li><a href="{{ item.url }}">{{ item.footer | default: item.label }}</a></li>
 {%- endfor %}
         </ul>

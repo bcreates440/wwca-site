@@ -21,7 +21,7 @@
       <div class="gallery">
         {%- for photo in b.photos %}
         <figure>
-          <img src="{{ photo.image }}" width="{{ photo.width }}" height="{{ photo.height }}" loading="lazy"
+          <img src="{{ photo.image }}" {% if photo.width %}width="{{ photo.width }}" height="{{ photo.height }}" {% endif %}loading="lazy"
                alt="{{ photo.alt }}">
           <figcaption>{{ photo.caption }}</figcaption>
         </figure>

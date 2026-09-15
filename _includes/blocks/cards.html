@@ -35,7 +35,7 @@
         {%- assign acc = b.accent %}{% if card.accent != nil %}{% assign acc = card.accent %}{% endif %}
         <article class="card{% if card.image %} icard{% elsif acc != false %} card-accent{% endif %}">
           {%- if card.image %}
-          <img src="{{ card.image }}" width="{{ card.image_width }}" height="{{ card.image_height }}" loading="lazy"
+          <img src="{{ card.image }}" {% if card.image_width %}width="{{ card.image_width }}" height="{{ card.image_height }}" {% endif %}loading="lazy"
                alt="{{ card.image_alt }}">
           <div class="pad">
           {%- endif %}

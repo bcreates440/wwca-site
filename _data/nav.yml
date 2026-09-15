@@ -4,35 +4,36 @@
 #   url         the filename the link points at
 #   label       the short name used in the top navigation
 #   footer      the longer name used in the footer (falls back to label)
-- slug: index
-  url: index.html
-  label: Home
-  footer: Home
-- slug: show
-  url: show.html
-  label: 2027 Show
-  footer: 2027 Gun Show
-- slug: vendors
-  url: vendors.html
-  label: Vendors
-  footer: Vendors &amp; Tables
-- slug: membership
-  url: membership.html
-  label: Membership
-  footer: Membership
-- slug: youth
-  url: youth.html
-  label: Youth
-  footer: Youth Programs
-- slug: gallery
-  url: gallery.html
-  label: Gallery
-  footer: Photo Gallery
-- slug: about
-  url: about.html
-  label: About
-  footer: About the WWCA
-- slug: contact
-  url: contact.html
-  label: Contact
-  footer: Contact
+items:
+  - slug: index
+    url: index.html
+    label: Home
+    footer: Home
+  - slug: show
+    url: show.html
+    label: 2027 Show
+    footer: 2027 Gun Show
+  - slug: vendors
+    url: vendors.html
+    label: Vendors
+    footer: Vendors &amp; Tables
+  - slug: membership
+    url: membership.html
+    label: Membership
+    footer: Membership
+  - slug: youth
+    url: youth.html
+    label: Youth
+    footer: Youth Programs
+  - slug: gallery
+    url: gallery.html
+    label: Gallery
+    footer: Photo Gallery
+  - slug: about
+    url: about.html
+    label: About
+    footer: About the WWCA
+  - slug: contact
+    url: contact.html
+    label: Contact
+    footer: Contact
