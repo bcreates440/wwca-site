@@ -8,10 +8,14 @@
   were built that way; leave it off unless you are matching one of them.
 {%- endcomment -%}
 {%- assign b = include.b -%}
-  <section class="band-{{ b.band | default: 'navy' }}">
+  <section class="band-{{ b.band | default: 'navy' }}"{% if b.id %} id="{{ b.id }}"{% endif %}>
     <div class="wrap{% unless b.nested %} split{% endunless %}">
       {%- if b.nested %}
       <div class="split">
+      {%- endif %}
+      {%- if b.image_first %}
+      <img src="{{ b.image }}" width="{{ b.image_width }}" height="{{ b.image_height }}"{% if b.image_priority %} fetchpriority="high"{% else %} loading="lazy"{% endif %}
+                 alt="{{ b.image_alt }}">
       {%- endif %}
       <div>
         {%- if b.eyebrow %}
@@ -41,8 +45,10 @@
         {%- endif %}
         {%- include blocks/buttons.html buttons=b.buttons %}
       </div>
-      <img src="{{ b.image }}" width="{{ b.image_width }}" height="{{ b.image_height }}" loading="lazy"
+      {%- unless b.image_first %}
+      <img src="{{ b.image }}" width="{{ b.image_width }}" height="{{ b.image_height }}"{% if b.image_priority %} fetchpriority="high"{% else %} loading="lazy"{% endif %}
            alt="{{ b.image_alt }}">
+      {%- endunless %}
       {%- if b.nested %}
       </div>
       {%- endif %}
