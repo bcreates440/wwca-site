@@ -41,7 +41,7 @@ logo_url: ../images/logo.png
 collections:
 
   # =========================================================================
-  #  THE EIGHT PAGES
+  #  THE SIX PAGES
   # =========================================================================
   - name: "pages"
     label: "Pages"
@@ -401,6 +401,30 @@ collections:
             name: "strip"
             widget: "object"
             summary: "Photo strip - {{fields.heading}}"
+            fields:
+              - *band
+              - *anchor_id
+              - { label: "Gap under the heading (advanced)", name: "heading_gap", widget: "string", required: false }
+              - *eyebrow
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Photographs"
+                name: "photos"
+                widget: "list"
+                collapsed: true
+                summary: "{{fields.alt}}"
+                fields:
+                  - { label: "Photograph", name: "image", widget: "image" }
+                  - { label: "Width in pixels", name: "width", widget: "number", required: false, value_type: "int" }
+                  - { label: "Height in pixels", name: "height", widget: "number", required: false, value_type: "int" }
+                  - { label: "Photo description", name: "alt", widget: "string" }
+              - *buttons_style
+              - *buttons
+
+          # --------------------------------------------------- carousel ----
+          - label: "Photo carousel"
+            name: "carousel"
+            widget: "object"
+            summary: "Carousel - {{fields.heading}}"
             fields:
               - *band
               - *anchor_id

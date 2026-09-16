@@ -36,6 +36,7 @@ exclude:
   - check.sh
   - countdown_test.js
   - README-EDITING.md
+  - RUNBOOK.md
   - COPY-A-PAGE.bat
   - images-original
   - STRIDE-BACKUP-do-not-edit

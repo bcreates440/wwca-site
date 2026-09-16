@@ -87,8 +87,7 @@ hr{border:0;border-top:1px solid var(--line);margin:2.5rem 0}
   border-radius:6px;display:block}
 .nav a:hover{background:rgba(255,255,255,.12);color:#fff}
 .nav a[aria-current="page"]{color:#fff;box-shadow:inset 0 -3px 0 var(--red)}
-.nav ul{display:flex;align-items:center;gap:.15rem;list-style:none;margin:0;padding:0;
-  flex-wrap:wrap}
+.nav ul{display:flex;align-items:center;gap:.15rem;list-style:none;margin:0;padding:0}
 .nav .btn{margin-left:.5rem;min-height:42px;padding:.55rem 1rem;font-size:.82rem}
 
 /* ---------- HERO ---------- */
@@ -213,6 +212,10 @@ tbody tr:nth-child(even){background:#FBFAF7}
 .gallery figcaption{padding:.8rem 1rem;font-size:.9rem;color:var(--ink-soft)}
 .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
 .strip img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius)}
+.carousel{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding-bottom:.6rem;-webkit-overflow-scrolling:touch}
+.carousel img{flex:0 0 auto;width:min(78vw,340px);aspect-ratio:4/3;object-fit:cover;
+  border-radius:var(--radius);scroll-snap-align:center}
 
 /* ---------- FOOTER ---------- */
 .site-footer{background:var(--navy);color:#C7D1E8;padding-block:3rem 1.5rem;font-size:.95rem}
