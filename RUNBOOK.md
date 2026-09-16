@@ -1,6 +1,6 @@
 # WWCA Website — Runbook
 
-Project handoff / reference sheet. Last verified 2026-09-15.
+Project handoff / reference sheet. Last verified 2026-09-16.
 
 Wyoming Weapons Collectors Association — built for the 38th Annual Memorial
 Weekend Gun Show, Riverton WY, May 29–30, 2027. Static site on GitHub Pages,
@@ -61,12 +61,15 @@ Same path whether the commit comes from the editor or from a manual
 
 ## File map
 
-Jekyll builds everything except the two folders marked below, which are
-deliberately kept out of git.
+Jekyll builds everything except the folders and files marked below.
+`images-original/` and `STRIDE-BACKUP-do-not-edit/` are kept out of git
+entirely; `RUNBOOK.md` is tracked but excluded from the Jekyll *build* via
+`_config.yml` — it used to leak onto the live site as `/RUNBOOK.html` before
+that exclusion was added.
 
 ```
 wwca-site/
-├── _content/          the 8 pages — front matter + section "blocks"
+├── _content/          the 6 pages — front matter + section "blocks"
 ├── _data/              site.yml, officers.yml, nav.yml — shared facts
 ├── _includes/         header, footer, block templates, jsonld
 ├── _layouts/          page.html — the one shell every page uses
@@ -76,9 +79,16 @@ wwca-site/
 ├── oauth-worker/      the Cloudflare Worker's own source
 ├── check.rb           *** run this before trusting any manual edit ***
 ├── README-EDITING.md  the in-repo how-to, aimed at a non-technical editor
+├── RUNBOOK.md          this file — in git, excluded from the built site
 ├── images-original/           NOT in git — camera originals, local backup only
 └── STRIDE-BACKUP-do-not-edit/ NOT in git — frozen old Stride Events copies
 ```
+
+The 6 pages are index, show, vendors, membership, about, contact — see
+`_data/nav.yml` for the exact list. Vendors and Youth are one page
+(`vendors.html`, youth content under the `#youth` anchor); there's no
+separate Gallery page — photos live in a carousel on the home page at
+`index.html#gallery`.
 
 ---
 
@@ -164,6 +174,23 @@ change, before pushing.
   unchecked**, on purpose — the worker only implements the first token
   exchange, not GitHub's refresh flow. Check that box and logins start
   silently failing after 8 hours.
+- **Gallery vs. carousel** — two different photo block types. "Photo gallery"
+  grids photos with captions underneath (still used for the youth range
+  photos on `vendors.html`). "Photo carousel" is the newer type — same photo
+  fields, but no caption field and it scrolls instead of gridding (used for
+  the homepage's Photo Gallery section). Same underlying photo list shape,
+  different template — don't add a `caption:` to a carousel block, it has no
+  field for it.
+- **Cross-page anchors** — `vendors.html#youth` and `index.html#gallery` are
+  linked from several other pages (show, membership, about). If you rename
+  either section's `id:` in the editor, grep the repo for the old anchor
+  before publishing, or those links silently land at the top of the page
+  instead of the right section.
+- **Editing live while someone pushes from a terminal** — the CMS editor and
+  a manual `git push` both write straight to `main`. Do them at the same
+  time and you get a real git merge to resolve, not just a `check.rb`
+  failure. Happened once already (2026-09-16) — four editor autosaves landed
+  mid-session and had to be merged back in by hand.
 
 ---
 
@@ -195,8 +222,9 @@ editor rather than in individual files.
 
 ## Build history
 
-Ten commits, in order, each one keeping the site rendering identically to
-the last before moving on.
+The meaningful milestones, in order — each one kept the site rendering
+identically to the last before moving on. Day-to-day content edits made
+through `/admin/` aren't listed individually.
 
 **Foundation**
 - `c36a4e4` Snapshot of the original hand-built, self-contained HTML
@@ -215,6 +243,16 @@ the last before moving on.
 - `ffed1d0` Verified a CMS save round-trips with zero data loss
 - `df32be6` Added the Cloudflare Worker for GitHub OAuth
 - `bc987fc` Pointed the site at the deployed worker — login tested live
+
+**Nav & page consolidation**
+- `4512adf` Added this runbook as a project handoff sheet
+- `f2ea66a` Trimmed the nav from 8 pages to 6 — dropped Home (the logo
+  covers it), merged Vendors + Youth into one page, replaced the standalone
+  Gallery page with a caption-free carousel on the home page; also fixed the
+  Tickets button wrapping onto its own row under the nav links
+- `539536f` Merged four concurrent live-editor saves to `index.html` back
+  into `main` alongside the above — see "Editing live while someone pushes
+  from a terminal" under [Things that will bite you](#things-that-will-bite-you)
 
 ---
 
@@ -239,7 +277,7 @@ the last before moving on.
 
 ---
 
-Lighthouse: 100 / 100 / 100 / 100 · 10 commits · 8 pages · 12 section types
+Lighthouse: 100 / 100 / 100 / 100 · 6 pages · 13 section types
 
 Bring this file to a fresh Claude session along with whatever's going
 wrong — it has everything needed to pick the project back up cold.
