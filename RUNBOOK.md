@@ -1,10 +1,14 @@
 # WWCA Website — Runbook
 
-Project handoff / reference sheet. Last verified 2026-09-16.
+Project handoff / reference sheet. Last verified 2026-09-19.
 
 Wyoming Weapons Collectors Association — built for the 38th Annual Memorial
 Weekend Gun Show, Riverton WY, May 29–30, 2027. Static site on GitHub Pages,
-edited through a Decap CMS panel, signed in via a small Cloudflare Worker.
+edited through a Decap CMS panel, signed in via a Cloudflare Worker shared
+across every client site's editor (this one and others) — see
+[client-sites-auth](https://github.com/bcreates440/client-sites-auth). New
+client sites now start from [client-site-template](https://github.com/bcreates440/client-site-template)
+instead of copying this repo.
 
 **Status:** Site live · Editor live & tested · Domain not yet pointed · 2027
 prices not yet set
@@ -23,12 +27,12 @@ instead.
 | **Live site (future)** | wyomingweaponscollectors.com — domain not pointed yet, see [Pending tasks](#pending-tasks) |
 | **Editor** | https://bcreates440.github.io/wwca-site/admin/ |
 | **GitHub repo** | https://github.com/bcreates440/wwca-site — public, branch `main` |
-| **OAuth worker** | https://wwca-auth.bcreates440.workers.dev |
+| **OAuth worker** | https://client-sites-auth.bcreates440.workers.dev — shared with other client sites, source at [bcreates440/client-sites-auth](https://github.com/bcreates440/client-sites-auth), not in this repo |
 | **GitHub account** | bcreates440 — owns the repo; every editor needs Write access on it |
 | **Cloudflare account** | bcreates440@gmail.com — subdomain `bcreates440.workers.dev` |
-| **GitHub OAuth App** | "WWCA Website Editor" — Client ID `Ov23lihrVHNljikNVeGW` |
-| **Callback URL on file** | `https://wwca-auth.bcreates440.workers.dev/callback` — must match the worker exactly or login breaks |
-| **Client secret** | Not recorded anywhere. Lives only as the Cloudflare Worker secret `GITHUB_CLIENT_SECRET`. Lost it? Regenerate on the OAuth App page, then `wrangler secret put GITHUB_CLIENT_SECRET` from `oauth-worker/`. |
+| **GitHub OAuth App** | "Client Sites Editor" — Client ID `Ov23liS5WT0Vsuo6CDze` — shared, not WWCA-specific |
+| **Callback URL on file** | `https://client-sites-auth.bcreates440.workers.dev/callback` — must match the worker exactly or login breaks |
+| **Client secret** | Not recorded anywhere. Lives only as a secret on the `client-sites-auth` Cloudflare Worker. Lost it? Regenerate on the OAuth App page, then `npx wrangler secret put GITHUB_CLIENT_SECRET --name client-sites-auth` from anywhere. |
 
 ---
 
@@ -41,12 +45,15 @@ else is standard Jekyll.
 **Signing in to the editor:**
 
 ```
-Editor (/admin/)  →  Worker (wwca-auth.workers.dev)  →  GitHub (login + approve app)  →  Editor (signed in)
+Editor (/admin/)  →  Worker (client-sites-auth.workers.dev)  →  GitHub (login + approve app)  →  Editor (signed in)
 ```
 
 The worker's only job is this handshake: send the browser to GitHub, take
 back the code GitHub issues, exchange it for a token, hand the token to the
-editor. It never touches page content.
+editor. It never touches page content, and it has no idea which repo it's
+signing someone into — that's enforced by GitHub's own collaborator
+permissions on this repo, which is what makes it safe to share the same
+worker across every client site.
 
 **Publishing a change:**
 
@@ -76,7 +83,6 @@ wwca-site/
 ├── css/styles.css     the whole site's styling, one file
 ├── images/            web-optimised photos — tracked in git
 ├── admin/             config.yml (CMS schema) + index.html
-├── oauth-worker/      the Cloudflare Worker's own source
 ├── check.rb           *** run this before trusting any manual edit ***
 ├── README-EDITING.md  the in-repo how-to, aimed at a non-technical editor
 ├── RUNBOOK.md          this file — in git, excluded from the built site
@@ -139,7 +145,7 @@ Decap checks real GitHub permissions.
    to change repo settings.
 4. They accept the email invite, then open `/admin/` and click
    **Login with GitHub**. First time, GitHub also asks *them* to approve the
-   WWCA Website Editor app — one click.
+   Client Sites Editor app — one click.
 
 ---
 
@@ -254,14 +260,22 @@ through `/admin/` aren't listed individually.
   into `main` alongside the above — see "Editing live while someone pushes
   from a terminal" under [Things that will bite you](#things-that-will-bite-you)
 
+**Shared infrastructure**
+- `e967b92` Migrated the editor's login off WWCA's own `wwca-auth` worker
+  onto a shared worker (`client-sites-auth`) used by other client sites too;
+  the old worker and its `oauth-worker/` folder in this repo are retired
+
 ---
 
 ## If it breaks
 
 **Editor login fails**
-- Confirm the worker's still deployed: `npx wrangler deployments list` in `oauth-worker/`
-- Confirm both secrets are set: `npx wrangler secret list`
+- Confirm the shared worker's still deployed: `npx wrangler deployments list --name client-sites-auth`
+- Confirm both secrets are set: `npx wrangler secret list --name client-sites-auth`
 - Confirm the OAuth App's callback URL still exactly matches `.../callback`
+- These affect every client site sharing the worker, not just WWCA — see
+  [client-sites-auth](https://github.com/bcreates440/client-sites-auth)'s own
+  README for its full troubleshooting steps.
 
 **Site won't update**
 - Check the build log: repo → Actions or Deployments tab
