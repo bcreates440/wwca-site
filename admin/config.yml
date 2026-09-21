@@ -541,7 +541,7 @@ collections:
           - { label: "Which show this is", name: "show_ordinal", widget: "string", hint: "38th, 39th, and so on" }
           - { label: "Show year", name: "show_year", widget: "string" }
           - { label: "Show dates, written out", name: "show_dates", widget: "string", hint: "May 29-30, 2027" }
-          - { label: "First day of the show", name: "show_start", widget: "date", format: "YYYY-MM-DD",
+          - { label: "First day of the show", name: "show_start", widget: "datetime", type: "date", format: "YYYY-MM-DD",
               hint: "The countdown on the home page is worked out from this." }
           - { label: "How many days the show runs", name: "show_days", widget: "number", value_type: "int" }
           - { label: "Table limit", name: "table_cap", widget: "string" }
