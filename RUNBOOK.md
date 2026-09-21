@@ -4,7 +4,7 @@ Project handoff / reference sheet. Last verified 2026-09-19.
 
 Wyoming Weapons Collectors Association — built for the 38th Annual Memorial
 Weekend Gun Show, Riverton WY, May 29–30, 2027. Static site on GitHub Pages,
-edited through a Decap CMS panel, signed in via a Cloudflare Worker shared
+edited through a Sveltia CMS panel, signed in via a Cloudflare Worker shared
 across every client site's editor (this one and others) — see
 [client-sites-auth](https://github.com/bcreates440/client-sites-auth). New
 client sites now start from [client-site-template](https://github.com/bcreates440/client-site-template)
@@ -135,7 +135,7 @@ bundle exec jekyll serve
 ## Adding an editor
 
 The `/admin/` link alone does nothing for someone without repo access —
-Decap checks real GitHub permissions.
+Sveltia checks real GitHub permissions.
 
 1. They create a free GitHub account and **verify the email** — the next
    step's invite won't complete until they do.
@@ -153,7 +153,7 @@ Decap checks real GitHub permissions.
 
 Non-obvious facts, in order of how much they'll hurt.
 
-**Rule #1 — Decap deletes what its schema doesn't know about.**
+**Rule #1 — Sveltia deletes what its schema doesn't know about.**
 The editor rewrites a whole page from the field list in `admin/config.yml`
 every time it saves. Add a field to a block's template without adding it to
 that schema, and the next save through the editor silently throws it away.
@@ -166,14 +166,14 @@ change, before pushing.
   not the page — move that file and this line needs fixing.
 - **Table rows** — rows in a Table block are one pipe-separated string each
   (`1st | Connor K. | Pellet rifle`), not nested arrays. That's deliberate —
-  it's what lets Decap's plain list widget edit them at all.
+  it's what lets Sveltia's plain list widget edit them at all.
 - **nav.yml** — `_data/nav.yml` holds its list under an `items:` key rather
-  than as a bare list — Decap can't edit a file whose top level is a list.
+  than as a bare list — Sveltia can't edit a file whose top level is a list.
 - **Shortcuts** — typing `[[phone]]`, `[[email]]`, `[[venue]]`, `[[cap]]`,
   `[[tickets]]` etc. inside body text pulls the real value from
   `_data/site.yml` via `_includes/md.html`. Don't hand-type a fact that
   already has a shortcut — it's how one edit updates the whole site.
-- **No Netlify** — Decap's own docs no longer list Netlify as an OAuth
+- **No Netlify** — Sveltia's own docs no longer list Netlify as an OAuth
   provider — that's why this uses a Cloudflare Worker instead of the more
   commonly-documented Netlify proxy.
 - **Token expiry** — the GitHub OAuth App has **"Expire user access tokens"
@@ -245,7 +245,7 @@ through `/admin/` aren't listed individually.
 - `792562f` Converted show and index — all 8 pages block-based
 
 **CMS + login**
-- `b2110b0` Added the Decap CMS schema and `check.rb`
+- `b2110b0` Added the Sveltia CMS schema and `check.rb`
 - `ffed1d0` Verified a CMS save round-trips with zero data loss
 - `df32be6` Added the Cloudflare Worker for GitHub OAuth
 - `bc987fc` Pointed the site at the deployed worker — login tested live
