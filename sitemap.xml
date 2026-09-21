@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Update <lastmod> when you change a page. Add a <url> block for any new page. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://wyomingweaponscollectors.com/index.html</loc>
+  <url><loc>https://wwcashow.com/index.html</loc>
        <lastmod>2026-09-16</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://wyomingweaponscollectors.com/show.html</loc>
+  <url><loc>https://wwcashow.com/show.html</loc>
        <lastmod>2026-09-14</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://wyomingweaponscollectors.com/vendors.html</loc>
+  <url><loc>https://wwcashow.com/vendors.html</loc>
        <lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://wyomingweaponscollectors.com/membership.html</loc>
+  <url><loc>https://wwcashow.com/membership.html</loc>
        <lastmod>2026-09-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://wyomingweaponscollectors.com/about.html</loc>
+  <url><loc>https://wwcashow.com/about.html</loc>
        <lastmod>2026-09-14</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://wyomingweaponscollectors.com/contact.html</loc>
+  <url><loc>https://wwcashow.com/contact.html</loc>
        <lastmod>2026-09-14</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 </urlset>

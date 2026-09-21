@@ -10,8 +10,8 @@ across every client site's editor (this one and others) — see
 client sites now start from [client-site-template](https://github.com/bcreates440/client-site-template)
 instead of copying this repo.
 
-**Status:** Site live · Editor live & tested · Domain not yet pointed · 2027
-prices not yet set
+**Status:** Site live at wwcashow.com (custom domain, 2026-09-21) · Editor
+live & tested · 2027 prices not yet set
 
 ---
 
@@ -23,9 +23,8 @@ instead.
 
 | | |
 |---|---|
-| **Live site (current)** | https://bcreates440.github.io/wwca-site/ |
-| **Live site (future)** | wyomingweaponscollectors.com — domain not pointed yet, see [Pending tasks](#pending-tasks) |
-| **Editor** | https://bcreates440.github.io/wwca-site/admin/ |
+| **Live site** | https://wwcashow.com (wwcashow.org 301-redirects here; bcreates440.github.io/wwca-site/ still works too) |
+| **Editor** | https://wwcashow.com/admin/ |
 | **GitHub repo** | https://github.com/bcreates440/wwca-site — public, branch `main` |
 | **OAuth worker** | https://client-sites-auth.bcreates440.workers.dev — shared with other client sites, source at [bcreates440/client-sites-auth](https://github.com/bcreates440/client-sites-auth), not in this repo |
 | **GitHub account** | bcreates440 — owns the repo; every editor needs Write access on it |
@@ -202,9 +201,16 @@ change, before pushing.
 
 ## Pending tasks
 
-- **Domain** — wyomingweaponscollectors.com still points at the old Joomla
-  site. Next action: repo → Settings → Pages → add custom domain, then two
-  DNS records at the registrar. Same-day change, not urgent.
+- **Domain — done, but flag the discrepancy.** This RUNBOOK previously
+  planned for `wyomingweaponscollectors.com` (the org's full-name domain)
+  to eventually point here. Instead, `wwcashow.com`/`wwcashow.org` (show-
+  specific domains, registered separately at GoDaddy) went live here on
+  2026-09-21. `wyomingweaponscollectors.com` is a *different, still-live*
+  domain — it still runs the old Joomla site and has real Zoho Mail email
+  on it (MX/SPF records confirmed live 2026-09-21). Nobody touched that
+  domain's DNS. Worth a conscious decision with WWCA at some point: keep
+  both domains doing separate things, or eventually point/redirect
+  `wyomingweaponscollectors.com` here too — not decided, not urgent.
 - **2027 prices** — admission and table rates aren't set — the board hasn't
   decided, and the table-rental contract is still unsettled. Marked
   `KEEP-UNTIL-PRICED` on the Admission card (show.html) and the "What a

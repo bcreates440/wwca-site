@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wyomingweaponscollectors.com/sitemap.xml
+Sitemap: https://wwcashow.com/sitemap.xml

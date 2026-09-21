@@ -10,9 +10,9 @@
 #
 # IMPORTANT: leave this pointing at the real domain even while the site is
 # still being previewed at bcreates440.github.io. It tells Google that
-# wyomingweaponscollectors.com is the real address, which is what stops the
+# wwcashow.com is the real address, which is what stops the
 # preview copy competing with the real site in search results.
-url: "https://wyomingweaponscollectors.com"
+url: "https://wwcashow.com"
 baseurl: ""
 
 title: "Wyoming Weapons Collectors Association"

@@ -4,7 +4,7 @@ There are two ways to change this website. Most of the time you want the first.
 
 | | Who it is for | How |
 |---|---|---|
-| **The website editor** | Anyone | Go to **wyomingweaponscollectors.com/admin/**, sign in with GitHub, change the words, press Publish. |
+| **The website editor** | Anyone | Go to **wwcashow.com/admin/**, sign in with GitHub, change the words, press Publish. |
 | **The files** | Someone comfortable with a text editor | Edit the files in this folder and push to GitHub. |
 
 Either way the website rebuilds itself and is live about a minute later. There is
