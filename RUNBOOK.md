@@ -245,7 +245,7 @@ through `/admin/` aren't listed individually.
 - `792562f` Converted show and index — all 8 pages block-based
 
 **CMS + login**
-- `b2110b0` Added the Sveltia CMS schema and `check.rb`
+- `b2110b0` Added the Decap CMS schema and `check.rb`
 - `ffed1d0` Verified a CMS save round-trips with zero data loss
 - `df32be6` Added the Cloudflare Worker for GitHub OAuth
 - `bc987fc` Pointed the site at the deployed worker — login tested live
