@@ -219,6 +219,22 @@ change, before pushing.
 - **Client access** — WWCA's own editor hasn't been added as a repo
   collaborator yet. See "Adding an editor" above once they have a GitHub
   account.
+- **HTTPS on wwcashow.com — still provisioning as of 2026-09-22.** DNS is
+  correct (resolves to all 4 GitHub Pages IPs) and `wwcashow.org` really
+  does 301 to `https://wwcashow.com/` (confirmed with a browser-UA request —
+  plain `curl` gets a `405` from GoDaddy's forwarding WAF, which blocks
+  bare/scriptable requests; that's a GoDaddy quirk, not a broken redirect).
+  But a direct TLS handshake to `wwcashow.com` fails
+  (`SEC_E_WRONG_PRINCIPAL` / cert doesn't match the domain yet), and
+  `gh api repos/bcreates440/wwca-site/pages --jq .https_enforced` is still
+  `false`. GitHub hasn't finished issuing the Let's Encrypt cert for the
+  custom domain. Nothing to fix — just re-check
+  `gh api repos/bcreates440/wwca-site/pages --jq '.https_enforced,.status'`
+  and try `https://wwcashow.com` in a real browser in a day or so.
+- **WWCA's GoDaddy password was pasted into a chat screenshot on
+  2026-09-21** (visible in plain text) during the domain setup. Not used or
+  stored by Claude beyond that session, but WWCA should rotate it — hasn't
+  been confirmed done.
 
 ---
 
