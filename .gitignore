@@ -11,6 +11,7 @@ _site/
 .jekyll-metadata
 Gemfile.lock
 .sass-cache/
+vendor/
 
 # OS noise
 Thumbs.db
