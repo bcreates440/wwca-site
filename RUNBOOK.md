@@ -231,6 +231,22 @@ change, before pushing.
   custom domain. Nothing to fix — just re-check
   `gh api repos/bcreates440/wwca-site/pages --jq '.https_enforced,.status'`
   and try `https://wwcashow.com` in a real browser in a day or so.
+  **Re-checked 2026-09-30: stuck, not slow.** Still no cert after 9 days, and
+  `gh api repos/bcreates440/wwca-site/pages` returns no `https_certificate`
+  object at all, so GitHub never started the request. DNS is not the cause
+  (4 A records correct, `www` CNAME correct, no CAA or AAAA on the apex).
+  It now breaks things visitors see: `https://wwcashow.com` shows a cert
+  error, GoDaddy's `.org` forward lands on that error, and the canonical /
+  `og:url` / `og:image` tags all point at the https URL. **Fix:** repo
+  Settings → Pages → Custom domain → Remove, wait a minute, re-enter
+  `wwcashow.com` → Save (the site shows a GitHub 404 on the domain for a
+  minute or two in between). Once the certificate appears, tick "Enforce HTTPS".
+- **GitHub domain verification — not done.** Optional hardening against
+  someone else claiming `wwcashow.com` on GitHub Pages: github.com →
+  Settings → Pages → Add a domain, then add the TXT record it gives
+  (`_github-pages-challenge-bcreates440`) at GoDaddy. Needs Blake live in
+  GoDaddy. Search Console is separately verified by its own
+  `google-site-verification` TXT record on the apex (still present 2026-09-30).
 - **WWCA's GoDaddy password was pasted into a chat screenshot on
   2026-09-21** (visible in plain text) during the domain setup. Not used or
   stored by Claude beyond that session, but WWCA should rotate it — hasn't
