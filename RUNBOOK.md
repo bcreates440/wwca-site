@@ -219,15 +219,14 @@ change, before pushing.
 - **Client access** — WWCA's own editor hasn't been added as a repo
   collaborator yet. See "Adding an editor" above once they have a GitHub
   account.
-- **HTTPS on wwcashow.com — cert issued 2026-09-30; "Enforce HTTPS" still
-  to tick.** The Let's Encrypt cert sat unissued for 9 days (the Pages API
+- **HTTPS on wwcashow.com — done 2026-09-30** (cert issued, "Enforce HTTPS"
+  on). Kept here for the lesson below. The Let's Encrypt cert sat unissued for 9 days (the Pages API
   showed no certificate request at all). Simply opening repo Settings →
   Pages kicked it: the page re-ran its DNS check and the cert was approved
   minutes later (covers `wwcashow.com` + `www`, expires 2026-12-29, GitHub
   renews it). Confirmed `https://wwcashow.com`, `www`, and the `.org`
   forward all end at `https://wwcashow.com/` with a 200. If a future cert
-  ever stalls again, try the same thing first. Remaining: refresh that
-  settings page and tick **Enforce HTTPS**.
+  ever stalls again, try the same thing first. 
 - **GitHub domain verification — not done.** Optional hardening against
   someone else claiming `wwcashow.com` on GitHub Pages: github.com →
   Settings → Pages → Add a domain, then add the TXT record it gives
