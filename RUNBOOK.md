@@ -227,12 +227,12 @@ change, before pushing.
   renews it). Confirmed `https://wwcashow.com`, `www`, and the `.org`
   forward all end at `https://wwcashow.com/` with a 200. If a future cert
   ever stalls again, try the same thing first. 
-- **GitHub domain verification — not done.** Optional hardening against
-  someone else claiming `wwcashow.com` on GitHub Pages: github.com →
-  Settings → Pages → Add a domain, then add the TXT record it gives
-  (`_github-pages-challenge-bcreates440`) at GoDaddy. Needs Blake live in
-  GoDaddy. Search Console is separately verified by its own
-  `google-site-verification` TXT record on the apex (still present 2026-09-30).
+- **GitHub domain verification — done 2026-09-30.** `wwcashow.com` is
+  verified on Blake's GitHub account (github.com/settings/pages), so nobody
+  else can publish a Pages site on it or its subdomains. Kept by a TXT record
+  `_github-pages-challenge-bcreates440` at GoDaddy — **don't delete it**, or
+  the verification lapses. Search Console is separately verified by the
+  `google-site-verification` TXT record on the apex; also leave that alone.
 - **WWCA's GoDaddy password was pasted into a chat screenshot on
   2026-09-21** (visible in plain text) during the domain setup. Not used or
   stored by Claude beyond that session, but WWCA should rotate it — hasn't
