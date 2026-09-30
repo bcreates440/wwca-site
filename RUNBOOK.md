@@ -219,28 +219,15 @@ change, before pushing.
 - **Client access** — WWCA's own editor hasn't been added as a repo
   collaborator yet. See "Adding an editor" above once they have a GitHub
   account.
-- **HTTPS on wwcashow.com — still provisioning as of 2026-09-22.** DNS is
-  correct (resolves to all 4 GitHub Pages IPs) and `wwcashow.org` really
-  does 301 to `https://wwcashow.com/` (confirmed with a browser-UA request —
-  plain `curl` gets a `405` from GoDaddy's forwarding WAF, which blocks
-  bare/scriptable requests; that's a GoDaddy quirk, not a broken redirect).
-  But a direct TLS handshake to `wwcashow.com` fails
-  (`SEC_E_WRONG_PRINCIPAL` / cert doesn't match the domain yet), and
-  `gh api repos/bcreates440/wwca-site/pages --jq .https_enforced` is still
-  `false`. GitHub hasn't finished issuing the Let's Encrypt cert for the
-  custom domain. Nothing to fix — just re-check
-  `gh api repos/bcreates440/wwca-site/pages --jq '.https_enforced,.status'`
-  and try `https://wwcashow.com` in a real browser in a day or so.
-  **Re-checked 2026-09-30: stuck, not slow.** Still no cert after 9 days, and
-  `gh api repos/bcreates440/wwca-site/pages` returns no `https_certificate`
-  object at all, so GitHub never started the request. DNS is not the cause
-  (4 A records correct, `www` CNAME correct, no CAA or AAAA on the apex).
-  It now breaks things visitors see: `https://wwcashow.com` shows a cert
-  error, GoDaddy's `.org` forward lands on that error, and the canonical /
-  `og:url` / `og:image` tags all point at the https URL. **Fix:** repo
-  Settings → Pages → Custom domain → Remove, wait a minute, re-enter
-  `wwcashow.com` → Save (the site shows a GitHub 404 on the domain for a
-  minute or two in between). Once the certificate appears, tick "Enforce HTTPS".
+- **HTTPS on wwcashow.com — cert issued 2026-09-30; "Enforce HTTPS" still
+  to tick.** The Let's Encrypt cert sat unissued for 9 days (the Pages API
+  showed no certificate request at all). Simply opening repo Settings →
+  Pages kicked it: the page re-ran its DNS check and the cert was approved
+  minutes later (covers `wwcashow.com` + `www`, expires 2026-12-29, GitHub
+  renews it). Confirmed `https://wwcashow.com`, `www`, and the `.org`
+  forward all end at `https://wwcashow.com/` with a 200. If a future cert
+  ever stalls again, try the same thing first. Remaining: refresh that
+  settings page and tick **Enforce HTTPS**.
 - **GitHub domain verification — not done.** Optional hardening against
   someone else claiming `wwcashow.com` on GitHub Pages: github.com →
   Settings → Pages → Add a domain, then add the TXT record it gives
