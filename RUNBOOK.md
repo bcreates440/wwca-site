@@ -208,9 +208,14 @@ change, before pushing.
   2026-09-21. `wyomingweaponscollectors.com` is a *different, still-live*
   domain — it still runs the old Joomla site and has real Zoho Mail email
   on it (MX/SPF records confirmed live 2026-09-21). Nobody touched that
-  domain's DNS. Worth a conscious decision with WWCA at some point: keep
-  both domains doing separate things, or eventually point/redirect
-  `wyomingweaponscollectors.com` here too — not decided, not urgent.
+  domain's DNS. **Decided 2026-10-01: the old site is retired.** WWCA has
+  asked whoever manages the old site to 301 its web traffic here
+  (page-by-page map: `wwca-redirect-map.txt` in Blake's Claude outputs).
+  Web only — leave MX/SPF alone, the Zoho Mail must keep working. Search
+  Console is done (sitemap submitted, indexing requested). Still to do once
+  the redirects are live: confirm them, then Search Console Change of
+  Address (needs the old domain verified) and ask directories to update
+  their links.
 - **2027 prices** — admission and table rates aren't set — the board hasn't
   decided, and the table-rental contract is still unsettled. Marked
   `KEEP-UNTIL-PRICED` on the Admission card (show.html) and the "What a
