@@ -125,7 +125,8 @@ if Dir.exist?(SITE)
     xml = File.read("sitemap.xml", encoding: "utf-8")
     built.each do |f|
       name = File.basename(f)
-      bad "#{name} is not listed in sitemap.xml" unless xml.include?(name)
+      listed = name == "index.html" ? xml.include?("<loc>https://wwcashow.com/</loc>") : xml.include?(name)
+      bad "#{name} is not listed in sitemap.xml" unless listed
     end
   end
 else
