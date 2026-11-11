@@ -1,36 +1,59 @@
 # WWCA Website — How to Edit It
 
-There are two ways to change this website. Most of the time you want the first.
+There are three ways to change this website. Almost always you want the first.
 
 | | Who it is for | How |
 |---|---|---|
-| **The website editor** | Anyone | Go to **wwcashow.com/admin/**, sign in with GitHub, change the words, press Publish. |
+| **The website editor** | Anyone | Go to **wwcashow.com/edit/**, sign in with GitHub, click the words or pictures you want to change, press **Publish**. |
+| **The advanced editor** | Anyone, for the odd setting the first one doesn't show | **wwcashow.com/admin/** - a form for every setting. Same sign-in. |
 | **The files** | Someone comfortable with a text editor | Edit the files in this folder and push to GitHub. |
 
-Either way the website rebuilds itself and is live about a minute later. There is
-nothing to upload.
+Whichever you use, the website rebuilds itself and is live about a minute later.
+There is nothing to upload.
 
 ---
 
 ## Using the website editor
 
-Open **/admin/** and sign in. You will see:
+Open **/edit/** and sign in. You'll see your real page.
 
-- **Pages** — the eight pages of the site
-- **Site-wide details** — contact details, show dates, the Stride Events links,
-  the officers, and the navigation menu
+### Changing words and pictures
 
-### Editing a page
+- **Click any words** and type. Press **Enter** when you're done, or **Esc** to
+  cancel.
+- **Click any picture** and choose **Replace picture**. The editor makes it the
+  right size for you, so a photo straight off your phone is fine.
+- After a new picture, fill in (or check) its **description** - that's what a
+  blind visitor hears and what Google reads.
+- Anything you can't click - a link's destination, a colour choice - is in the
+  **settings panel** on the right, which opens when you click the section.
 
-A page is a stack of **sections**. Open a page and you will see them listed:
-"Hero banner", "Card grid", "Text beside a photograph", and so on.
+### Sections
 
-- Click a section to open it and change the words.
-- **Drag the handle** on the left to move a section up or down.
-- Use the **bin icon** to delete a section.
-- **Add Sections** at the bottom adds a new one — pick the kind you want.
+A page is a stack of sections. Point at one and a small toolbar appears:
+**Move up**, **Move down**, **Duplicate**, **Remove**, **Settings**, and
+**+ Add section below** (which shows every kind of section to pick from).
 
-Press **Publish** when you are done. That is it.
+### Pages, menu and contact details
+
+- **Page** (top left) switches pages. **+ Add a page...** at the bottom of that
+  list makes a new one and can put it in the menu for you.
+- **Page settings** is the page's title and description for Google, with a
+  preview of how it will look there. **Delete this page** is at the bottom.
+- **Site-wide...** is everything that appears on every page: contact details,
+  the menu, and so on.
+
+### Publishing
+
+Nothing goes live until you press **Publish**. Until then your changes are kept
+on your computer - close the tab and they'll be offered back to you next time.
+**Undo** takes back any step.
+
+If something's missing (an empty heading, a picture without a description),
+Publish tells you what and takes you to it.
+
+Changed something by mistake after publishing? **History** shows every earlier
+version of the page. Look at one, press **Restore this version**, then Publish.
 
 ### The shortcuts
 
@@ -54,14 +77,13 @@ instead of forty.
 
 ### Photographs
 
-Use the **Photograph** box in any section that has one. When you add a picture,
-fill in **Photo description** — that is what a blind visitor hears and what
-Google reads. "Overhead view of the Fremont Center show floor" is useful;
-"gun show photo" is a wasted line.
+In the website editor, pictures are resized for you. **In the advanced editor
+they aren't**: resize a photo to about 1000px on its longest edge before you
+upload it there. A straight-off-the-phone photo is roughly ten times bigger
+than the page needs and will make the site slow.
 
-**Resize a photo to about 1000px on its longest edge before you upload it.**
-A straight-off-the-phone photo is roughly ten times bigger than the page needs
-and will make the site slow.
+Either way, give every picture a description that says what's in it. Be
+specific and skip generic filler.
 
 ---
 
